@@ -16,9 +16,9 @@ class DBSettings(BaseSettings):
     USER: str
     PASSWORD: int | None = None
     DB_NAME: str
-    @property
-    def DATABASE_URL(self):
-        return f'blazegraph://{self.HOST}:{self.PORT}/{self.DB_NAME}'
+    # @property
+    # def DATABASE_URL(self):
+    #     return f'blazegraph://{self.HOST}:{self.PORT}/{self.DB_NAME}'
 
 settings = DBSettings()
 print(settings.DATABASE_URL)
