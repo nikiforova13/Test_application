@@ -1,8 +1,6 @@
+from app.config.base import BASE_CONFIG, get_updated_model_config
 from pydantic_settings import BaseSettings
 from pydantic_settings.main import SettingsConfigDict
-from app.config.base import get_updated_model_config, BASE_CONFIG
-
-from pymantic import sparql
 
 
 class DBSettings(BaseSettings):

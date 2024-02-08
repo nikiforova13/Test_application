@@ -1,6 +1,7 @@
+from app.models import router as bl_models
+from app.routers import base_responses, router_a
 from flask import Flask, render_template
-from flask_restx import Resource, Api, apidoc, fields
-from app.routers import router_a, base_responses
+from flask_restx import Api, Resource, apidoc, fields
 
 app = Flask(__name__)
 api = Api(
@@ -12,3 +13,6 @@ api = Api(
 )
 api.add_namespace(router_a)
 api.add_namespace(base_responses)
+api.add_namespace(bl_models)
+if __name__ == "__main__":
+    app.run()
