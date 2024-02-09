@@ -21,7 +21,7 @@
 #     #     return '<h1>DATA TO DB</h1>'
 #
 #         return redirect('/data_db')
-#     return render_template('index2.html', form=form)
+#     return render_template('main.html', form=form)
 #
 #
 # @app.route("/data_db")

@@ -22,20 +22,13 @@ def hello_world():
     form = SumbitForm()
     if form.validate_on_submit():
         if form.sumbit.data:
-            res = h()
             return render_template('index.html', form=bla.get_all_subject_and_predicate_and_object()["results"]["bindings"])
         if form.sumbit2.data:
-            res = h()
             return render_template('index3.html', form=bla.get_all_individual_iri_and_label()["results"]["bindings"])
         if form.sumbit3.data:
-            res = h()
             return render_template('index4.html', form=bla.get_all_classes()["results"]["bindings"])
-    return render_template('index2.html', form=form)
+    return render_template('main.html', form=form)
 
-
-def h():
-    response = requests.post('http://127.0.0.1:8015/blazegraph/fetch', json={ "query": "SELECT ?subject ?predicate ?object WHERE {?subject ?predicate ?object}"})
-    return response.json()
 
 api = Api(
     app=app,
