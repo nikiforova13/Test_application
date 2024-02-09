@@ -1,7 +1,7 @@
 import pytest
 import requests  # type: ignore
 
-test_url = "http://127.0.0.1:8015"
+test_url = "http://127.0.0.1:8000"
 
 
 @pytest.mark.parametrize("uri", ["docs", "/"])

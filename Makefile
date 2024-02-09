@@ -2,7 +2,7 @@ PYTHONPATH = PYTHONPATH=src
 DIRS = src
 
 run:
-	$(PYTHONPATH) gunicorn --bind 0.0.0.0:8015 --reload --threads 4 app.main:app
+	$(PYTHONPATH) gunicorn --bind 0.0.0.0:8000 --reload --threads 4 app.main:app
 
 install-deps:
 	poetry install --with tests --with linters
