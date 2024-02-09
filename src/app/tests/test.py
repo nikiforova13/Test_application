@@ -17,8 +17,14 @@ query1 = """prefix owl: <http://www.w3.org/2002/07/owl#>
 query2 = 'SELECT ?subject ?predicate ?object WHERE {?subject ?predicate ?object}'
 query3 = "SELECT ?subject ?predicate ?object WHERE {?subject ?predicate ?object}"
 
-@pytest.mark.parametrize('query', [query1,query2, query3], ids=['query1','query2','query3'])
+@pytest.mark.parametrize('query', [query1,query2, query3, ''], ids=['query1','query2','query3'])
 def test_get_data_from_db(query):
     response = requests.post(f'{test_url}/blazegraph/fetch', json={ "query": query})
     assert len(response.json()) != 0
     assert response.status_code == 200
+
+@pytest.mark.parametrize('query, status_code', ([{}, 404], ['{"query": "ddd"}"',500]), ids=['query_with_null', 'incorrect_value'])
+def test_get_data_from_db(query, status_code):
+    response = requests.post(f'{test_url}/blazegraph/fetch', json=query)
+    assert len(response.json()) != 0
+    assert response.status_code == status_code
