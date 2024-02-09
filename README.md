@@ -13,6 +13,10 @@ make install-deps
 # Run locally, service will be available on localhost:8000
 make run
 
+# Run locally on another port and host
+cd src
+python manage.py serve --host 127.0.0.1 --port 8000
+
 # Format the code
 make format
 
