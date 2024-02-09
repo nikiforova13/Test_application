@@ -18,7 +18,7 @@ class SumbitForm(FlaskForm):
     sumbit3 = SubmitField("Get data from db subject predicate")
 
 @app.route("/", methods=['GET', 'POST'])
-def hello_world():
+def main_page():
     form = SumbitForm()
     if form.validate_on_submit():
         if form.sumbit.data:
