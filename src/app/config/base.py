@@ -14,6 +14,6 @@ BASE_CONFIG: SettingsConfigDict = SettingsConfigDict(
 def get_updated_model_config(orig: SettingsConfigDict, update: SettingsConfigDict):
     copy = orig.copy()
     for k, v in update.items():
-        copy[k] = v
+        copy[k] = v  # type: ignore
 
     return copy

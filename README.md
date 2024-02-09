@@ -23,4 +23,7 @@ make format
 # Сhecking the quality of the code
 make lint
 
+# Running tests
+make test
+
 ```

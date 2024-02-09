@@ -15,5 +15,8 @@ lint:
 	poetry run black --check --diff $(DIRS)
 	poetry run mypy --show-error-codes $(DIRS)
 
+test:
+	pytest -s -v $(DIRS)
+
 
 

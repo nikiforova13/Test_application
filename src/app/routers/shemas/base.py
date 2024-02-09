@@ -1,6 +1,6 @@
 from enum import IntEnum
 
-from flask_restx import Namespace, fields
+from flask_restx import Namespace, fields  # type: ignore
 from starlette import status
 
 responses = Namespace("responses", description="API for database interaction")

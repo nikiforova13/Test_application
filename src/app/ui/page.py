@@ -1,6 +1,6 @@
 from flask import blueprints, render_template
-from flask_wtf import FlaskForm
-from wtforms.fields import SubmitField
+from flask_wtf import FlaskForm  # type: ignore
+from wtforms.fields import SubmitField  # type: ignore
 
 from app.dao.db_bl import BlazegraphDB
 

@@ -7,13 +7,13 @@ class DBSettings(BaseSettings):
     model_config = SettingsConfigDict(
         get_updated_model_config(
             BASE_CONFIG, SettingsConfigDict(env_prefix="BLAZEGRAPH_")
-        )
+        )  # type: ignore
     )
-    HOST: str
-    PORT: int
+    HOST: str | None = None
+    PORT: int | None = None
     USER: str | None = None
     PASSWORD: int | None = None
-    DB_NAME: str
+    DB_NAME: str | None = None
 
     @property
     def DATABASE_URL(self):

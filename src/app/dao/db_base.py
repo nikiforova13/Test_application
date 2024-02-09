@@ -1,9 +1,9 @@
-from app.config.db import settings
-from pymantic import sparql
+from app.config.db import settings, DBSettings
+from pymantic import sparql  # type: ignore
 
 
 class DALBase(sparql.SPARQLServer):
-    settings: settings
+    settings: DBSettings = settings
 
     def __init__(self):
         super().__init__(query_url=settings.DATABASE_URL)

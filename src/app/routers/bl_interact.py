@@ -1,5 +1,5 @@
 from flask import abort, request
-from flask_restx import Namespace, Resource
+from flask_restx import Namespace, Resource  # type: ignore
 
 from app.dao.db_bl import BlazegraphDB
 from app.routers.shemas.base import BaseApiResponse

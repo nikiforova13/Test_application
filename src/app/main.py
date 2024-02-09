@@ -1,5 +1,5 @@
 from flask import Flask
-from flask_restx import Api
+from flask_restx import Api  # type: ignore
 
 from app.routers import router_base_responses, router_bl, router_models
 from app.ui import ui_router

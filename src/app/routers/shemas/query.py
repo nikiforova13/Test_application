@@ -1,4 +1,4 @@
-from flask_restx import Namespace, fields
+from flask_restx import Namespace, fields  # type: ignore
 
 router = Namespace("blazegraphModels", description="Models for database interaction")
 
