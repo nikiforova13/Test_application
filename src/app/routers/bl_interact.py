@@ -1,5 +1,5 @@
 from app.dao.db_bl import BlazegraphDB
-from app.models.query import query_model
+from app.routers.shemas.query import query_model
 from app.routers.shemas.base import BaseApiResponse
 from flask import abort, request
 from flask_restx import Namespace, Resource
