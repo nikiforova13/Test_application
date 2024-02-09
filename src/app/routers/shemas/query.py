@@ -6,7 +6,7 @@ query_model = router.model(
     "SelectQueryInDB",
     {
         "query": fields.String(
-            example="SELECT ?class WHERE {?class a <http://src/rtw#Class>}",
+            example="SELECT ?class WHERE {?class a <http://www.w3.org/2002/07/owl#Class>}",
             description="The query to be executed to retrieve data",
         ),
     },
