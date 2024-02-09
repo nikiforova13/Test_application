@@ -11,9 +11,9 @@ bla = BlazegraphDB()
 
 
 class SumbitForm(FlaskForm):
-    sumbit1 = SubmitField("Get data from db with classes")
-    sumbit2 = SubmitField("Get data from db iri and label")
-    sumbit3 = SubmitField("Get data from db subject predicate")
+    sumbit1 = SubmitField("Get subjects data from db")
+    sumbit2 = SubmitField("Get iri and label data from db")
+    sumbit3 = SubmitField("Get classes data from db")
 
 
 @router.route("/", methods=["GET", "POST"])
