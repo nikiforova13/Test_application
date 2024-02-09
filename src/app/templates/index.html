@@ -6,24 +6,44 @@
     <h2>The result of the request from database:</h2>
     <table border="1" cellpadding="1" cellspacing="1" style="width:500px">
          <thead>
+         {% if obj == 'subject' %}
             <tr>
                 <th scope="col">subject</th>
                 <th scope="col">predicate</th>
                 <th scope="col">object</th>
             </tr>
+         {% endif %}
+         {% if obj == 'ind' %}
+            <tr>
+                <th scope="col">individual_iri</th>
+                <th scope="col">individual_label</th>
+            </tr>
+         {% endif %}
+         {% if obj == 'classes' %}
+            <tr>
+                <th scope="col">class</th>
+            </tr>
+         {% endif %}
         </thead>
         {% for field in form %}
         <tbody>
             <tr>
                 {%- if field.subject -%}
-                <td>{{field.subject.value}}</td>
-                {% endif %}
+                <td>{{ field.subject.value }}</td>
+                {% endif -%}
                 {%- if field.predicate -%}
-                <td>{{field.predicate.value}}</td>
-                {% endif %}
+                <td>{{ field.predicate.value }}</td>
+                {% endif -%}
                 {%- if field.object -%}
-                <td>{{field.object.value}}</td>
-                {% endif %}
+                <td>{{ field.object.value }}</td>
+                {% endif -%}
+            </tr>
+            <tr>
+                <td>{{ field.individual_iri.value if field.individual_iri -}}</td>
+                <td>{{ field.individual_label.value if field.individual_label -}}</td>
+            </tr>
+            <tr>
+                <td>{{ field.class.value if field.class -}}</td>
             </tr>
         </tbody>
         {% endfor %}

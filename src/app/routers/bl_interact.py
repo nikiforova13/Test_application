@@ -1,10 +1,9 @@
-import logging
-
-from app.dao.db_bl import BlazegraphDB
-from app.routers.shemas.query import query_model
-from app.routers.shemas.base import BaseApiResponse
 from flask import abort, request
 from flask_restx import Namespace, Resource
+
+from app.dao.db_bl import BlazegraphDB
+from app.routers.shemas.base import BaseApiResponse
+from app.routers.shemas.query import query_model
 
 router = Namespace("blazegraph", description="API for database interaction")
 
