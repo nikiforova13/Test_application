@@ -10,6 +10,9 @@
 
     <h2>Bl-selector</h2>
 	<p>A service for interacting with the blazegraph database</p>
+    <ul>
+    <li><a href="/docs">Swagger/OpenApi</a></li>
+    </ul>
     {{ form.csrf_token() }}
     {% for field in form if field.name != "csrf_token" %}
 	<p>{{ field }}</p>

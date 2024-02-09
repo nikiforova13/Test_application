@@ -20,3 +20,8 @@ class BlazegraphDB(DALBase):
         return self.get_query(
             "SELECT ?subject ?predicate ?object WHERE {?subject ?predicate ?object}"
         )
+
+
+
+
+

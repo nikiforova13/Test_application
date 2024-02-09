@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BL-selector</title>
+    <h2>The result of the request from database:</h2>
+    <table border="1" cellpadding="1" cellspacing="1" style="width:500px">
+         <thead>
+            <tr>
+                <th scope="col">class</th>
+            </tr>
+        </thead>
+        {% for field in form %}
+        <tbody>
+            <tr>
+                <td>{{field.class.value if field.class else None}};</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</head>
+</html>
+

@@ -3,14 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>BL-selector</title>
-    <h2>Hello  ku!</h2>
-    <form method="post" action="/">
-        <input type="submit" value="VALUE1" name="action1"/>
-        <input type="submit" value="VALUE2" name="action2" />
-    </form>
-
+    <h2>The result of the request from database:</h2>
+    <table border="1" cellpadding="1" cellspacing="1" style="width:500px">
+         <thead>
+            <tr>
+                <th scope="col">subject</th>
+                <th scope="col">predicate</th>
+                <th scope="col">object</th>
+            </tr>
+        </thead>
+        {% for field in form %}
+        <tbody>
+            <tr>
+                {%- if field.subject -%}
+                <td>{{field.subject.value}}</td>
+                {% endif %}
+                {%- if field.predicate -%}
+                <td>{{field.predicate.value}}</td>
+                {% endif %}
+                {%- if field.object -%}
+                <td>{{field.object.value}}</td>
+                {% endif %}
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
 </head>
-<body>
-
-</body>
 </html>
+
