@@ -1,4 +1,5 @@
-# Test_application
+# BL-selector
+#### A service for interacting with the blazegraph database
 ## Usage
 ### Local:
 ```shell
